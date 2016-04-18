@@ -12,6 +12,8 @@ import * as Actions from "../../actions";
 import CharCaseSwitch from '../char-case-switch';
 import WordCarousel from '../word-carousel';
 
+import WordLengthSlider from '../word-length-slider';
+
 class Chrome extends Component {
 
   render() {
@@ -21,7 +23,10 @@ class Chrome extends Component {
     return (
       <View style={styles.container}>
         <CharCaseSwitch onChanged={actions.toggleCharCase} />
-        <WordCarousel words={words} />
+        <WordLengthSlider minimumValue={1} maximumValue={4} step={1} onChanged={actions.filterWordLength} />
+        <View>
+          <WordCarousel words={words} />
+        </View>
       </View>
     );
   }
@@ -30,7 +35,7 @@ class Chrome extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'row',
+    flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',

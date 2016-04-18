@@ -9,8 +9,8 @@ export default class CharCaseSwitch extends Component {
     constructor() {
         super();
         this.state = {
-            lowercase: false,
-            charCase: 'uppercase'
+            lowercase: true,
+            charCase: 'lowercase'
         }
     }
 
@@ -18,7 +18,7 @@ export default class CharCaseSwitch extends Component {
         return (
             <Switch
                 onValueChange={value => {
-                    this.props.onChanged({ lowercase: value, charCase: value ? 'lowercase' : 'uppercase' });
+                    this.props.onChanged(value ? 'lowercase' : 'uppercase');
                     this.setState({ lowercase: value, charCase: value ? 'lowercase' : 'uppercase' });
                 } }
                 style={{ marginBottom: 10 }}

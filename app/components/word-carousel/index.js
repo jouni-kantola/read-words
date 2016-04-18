@@ -8,10 +8,11 @@ import Word from '../word';
 export default class WordCarousel extends Component {
     render() {
         const {words} = this.props;
-        const word = words[0];
+        const visibleWords = words.filter(w => !w.filtered);
+        const word = visibleWords[0];
         return (
             <View>
-                <Word text={word} />
+                <Word text={word.displayValue} />
             </View>
         );
     }
