@@ -15,7 +15,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <Provider store={store({words: words})}>
+      <Provider store={store(words)}>
         <Chrome />
       </Provider>
     );

@@ -1,8 +1,16 @@
 export const UPPERCASE = "UPPERCASE";
 export const LOWERCASE = "LOWERCASE";
+export const WORD_LENGTH = "WORD_LENGTH";
 
-export function toggleCharCase(toState) {
+export function toggleCharCase(charCase) {
   return {
-    type: toState.charCase === 'lowercase' ? LOWERCASE : UPPERCASE
+    type: charCase === 'lowercase' ? LOWERCASE : UPPERCASE
+  };
+}
+
+export function filterWordLength(wordLength) {
+  return {
+    type: WORD_LENGTH,
+    wordLength: wordLength
   };
 }
